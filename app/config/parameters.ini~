@@ -1,0 +1,13 @@
+[parameters]
+    database_driver="pdo_mysql"
+    database_host="localhost"
+    database_port=""
+    database_name="dlaser_prod"
+    database_user="root"
+    database_password="root"
+    mailer_transport="smtp"
+    mailer_host="localhost"
+    mailer_user=""
+    mailer_password=""
+    locale="es"
+    secret="6599b84b5fbb9aedf9913cc9eee7b89a"
