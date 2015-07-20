@@ -56,24 +56,22 @@ class HcEsteticaController extends Controller{
 	public function saveAction($hc)
 	{
 
+        $HcEstetica = new HcEstetica();		
 		
-                $HcEstetica = new HcEstetica();		
-		$request = $this->getRequest();
+        $request = $this->getRequest();
 		$form   = $this->createForm(new HcEsteticaType(), $HcEstetica);				
-		$form->bindRequest($request);		
+		$form->bindRequest($request);
 
 		if ($form->isValid()) {
 			
 			$HcEstetica->serialize();
-                            			die(var_dump($HcEstetica));
 
-                        $em = $this->getDoctrine()->getEntityManager();
-                        $hc = $em->getRepository('HcBundle:Hc')->find($hc);
+           	$em = $this->getDoctrine()->getEntityManager();
+           	$hc = $em->getRepository('HcBundle:Hc')->find($hc);
 										 
-                         $factura = $hc->getFactura();
-                        if($hc){
-
-				
+            $factura = $hc->getFactura();
+            
+            if($hc){				
 				$HcEstetica->setHc($hc);				
 				$em->persist($HcEstetica);
 				$em->flush();

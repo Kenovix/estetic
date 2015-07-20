@@ -150,7 +150,7 @@ class HcEsteticaType extends AbstractType
                 ->add('pesogcorporal', 'integer', array('label' => 'PGC'))        
                 ->add('porcentajegv', 'integer', array('label' => 'PGV'))        
                 ->add('pm', 'integer', array('label' => 'Porcentaje musculo'))        
-                ->add('imc', 'integer', array('label' => 'IMC','read_only'=>true))
+                ->add('imc', 'integer', array('label' => 'IMC'))
                 ->add('abs', 'integer', array('label' => 'ABS'))
                 ->add('cintura', 'integer', array('label' => 'Cintura'))
                 ->add('ombligo', 'integer', array('label' => 'Ombligo'))
