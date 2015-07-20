@@ -462,6 +462,10 @@ class HcController extends Controller{
 		$sede = $factura->getSede();
 		$paciente = $factura->getPaciente();
 		$cargo = $factura->getCargo();
+                $cupo = $factura->getCupo();
+                $agenda = $cupo->getAgenda();
+                $profesional = $agenda->getUsuario();
+               
 		
 		//-----------------------consultas de usuario con su respectiva relacion -----------------------------
 
@@ -519,7 +523,8 @@ class HcController extends Controller{
 				'exaPrePrimerVez' => $exaPresenPrimerVez,
 				'exa_solicitado' => $exa_solicitado,
 				'cies' => $cie,
-				'perHcCie' => $hcCie
+				'perHcCie' => $hcCie,
+                                'profesional' =>$profesional
 		));
 		
 		$this->get('io_tcpdf')->dir = $sede->getDireccion();

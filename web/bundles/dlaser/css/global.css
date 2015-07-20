@@ -15,7 +15,7 @@ body {
 }
 
 #banner_cliente{
-	background:url(../images/banner.png);
+	
 	-moz-background-size:100% 65%;
 	background-size: 87% 60%;
 	background-repeat: no-repeat;
@@ -39,7 +39,7 @@ body {
 	text-align: center;
 }
         
-}
+
 
 #username a{
 	float: left;
