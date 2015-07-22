@@ -133,7 +133,7 @@ class HcEsteticaType extends AbstractType
 				'multiple'=>true,
 				'expanded' => true,				
 		))		
-		->add('medicacion', 	'textarea', array('label' => 'Observacion:'))
+		->add('medicacion', 	'textarea', array('label' => 'Medicacion:'))
 		->add('dx_cut', 		'textarea', array('required' => false,'label' => 'Diagnostico cutaneo:'))
 		
 		->add('fitzpatrick', 'choice', array(

@@ -4,25 +4,24 @@
 <style>
 	h1{
 		text-align: center;
+               
 	}
 	
-	h2{
-		text-align: center;
-	}
-	
-	h3{
-		text-align: center;
-	}
-	
-	h4{
-		text-align: center;
-	}
+        p {
+        
+        font-size: 10pt;
+        }
 	
 	table.paciente {
     	font-size: 9pt;
         border-bottom: 2px solid #000;
         margin-top: 2%;
-    }
+       }
+       
+       table.estetica{
+       
+       font-size: 10pt;
+       }
 </style>    
 {% endblock %}
 
@@ -48,7 +47,7 @@
 <h1>Historia Estetica</h1>
 <div>
 {% if entity %}
-<table border="1" cellpadding="1" cellspacing="0">
+<table border="1" cellpadding="1" cellspacing="0" class="estetica">
 	<thead>
 		<tr style="background-color:#CCC;color:#000000;">
 			<th colspan="2"><strong>Edad </strong></th>			
@@ -74,20 +73,15 @@
 {% endif %}
 </div>
 
-<div>
-<p><strong>Fitzpatrick:</strong> {{ entity.fitzpatrick }}</p>
-<p><strong>Info Fitzpatrick:</strong> {{ entity.infoFitzpatrick }}</p>
-</div>
-
 {% set conOp=0 %} 
 {% for op in entity.op %}
 	{% set conOp = 1+conOp %}					
 {% endfor %}
 
-<div>
+
 {% if entity.op %}
 
-<table border="1" cellpadding="0" cellspacing="0">
+<table border="1" cellpadding="0" cellspacing="0" class="estetica">
 		<thead>
 			<tr style="background-color:#CCC;color:#000000; text-align:center">
 				<th colspan="{{ conOp }}"><strong> ORIFICIOS PILOCEBACEOS</strong></th>
@@ -110,7 +104,7 @@
 	{% set con = 1+con %}					
 {% endfor %}
 
-	<table border="1" cellpadding="0" cellspacing="0">
+	<table border="1" cellpadding="0" cellspacing="0" class="estetica">
 		<thead>
 			<tr style="background-color:#CCC;color:#000000; text-align:center">
 				<th colspan="{{ con }}"><strong> PIGMENTACION</strong></th>
@@ -133,7 +127,7 @@
 	{% set conArruga = 1+conArruga %}					
 {% endfor %}
 
-	<table border="1" cellpadding="0" cellspacing="0">
+	<table border="1" cellpadding="0" cellspacing="0" class="estetica">
 		<thead>
 			<tr style="background-color:#CCC;color:#000000; text-align:center">
 				<th colspan="{{ conArruga }}"><strong> ARRUGAS</strong></th>
@@ -157,7 +151,7 @@
 	{% set conFlacidez = 1+conFlacidez %}					
 {% endfor %}
 
-	<table border="1" cellpadding="0" cellspacing="0">
+	<table border="1" cellpadding="0" cellspacing="0" class="estetica">
 		<thead>
 			<tr style="background-color:#CCC;color:#000000; text-align:center">
 				<th colspan="{{ conFlacidez }}"><strong> FLACIDEZ</strong></th>
@@ -181,7 +175,7 @@
 	{% set conParpados = 1+conParpados %}					
 {% endfor %}
 
-	<table border="1" cellpadding="0" cellspacing="0">
+	<table border="1" cellpadding="0" cellspacing="0" class="estetica">
 		<thead>
 			<tr style="background-color:#CCC;color:#000000; text-align:center">
 				<th colspan="{{ conParpados }}"><strong> PARPADOS</strong></th>
@@ -205,7 +199,7 @@
 	{% set conLesionesCut = 1+conLesionesCut %}					
 {% endfor %}
 
-	<table border="1" cellpadding="0" cellspacing="0">
+	<table border="1" cellpadding="0" cellspacing="0" class="estetica">
 		<thead>
 			<tr style="background-color:#CCC;color:#000000; text-align:center">
 				<th colspan="{{ conLesionesCut }}"><strong> LESIONES CUT</strong></th>
@@ -229,7 +223,7 @@
 	{% set conLipodistrofia = 1+conLipodistrofia %}					
 {% endfor %}
 
-	<table border="1" cellpadding="0" cellspacing="0">
+	<table border="1" cellpadding="0" cellspacing="0" class="estetica">
 		<thead>
 			<tr style="background-color:#CCC;color:#000000; text-align:center">
 				<th colspan="{{ conLipodistrofia }}"><strong> LIPODISTROFIA</strong></th>
@@ -253,7 +247,7 @@
 	{% set conTatuaje = 1+conTatuaje %}					
 {% endfor %}
 
-	<table border="1" cellpadding="0" cellspacing="0">
+	<table border="1" cellpadding="0" cellspacing="0" class="estetica">
 		<thead>
 			<tr style="background-color:#CCC;color:#000000; text-align:center">
 				<th colspan="{{ conTatuaje }}"><strong> TATUAJE</strong></th>
@@ -278,7 +272,7 @@
 {% endfor %}
 
 
-	<table border="1" cellpadding="0" cellspacing="0">
+	<table border="1" cellpadding="0" cellspacing="0" class="estetica">
 		<thead>
 			<tr style="background-color:#CCC;color:#000000; text-align:center">
 				<th colspan="{{ conCicatrizes }}"><strong> CICATRIZES</strong></th>
@@ -302,7 +296,7 @@
 {% endfor %}
 
 
-	<table border="1" cellpadding="0" cellspacing="0">
+	<table border="1" cellpadding="0" cellspacing="0" class="estetica">
 		<thead>
 			<tr style="background-color:#CCC;color:#000000; text-align:center">
 				<th colspan="{{ conEstrias }}"><strong> ESTRIAS</strong></th>
@@ -317,12 +311,49 @@
 		</tbody>
 	</table>
 {% endif %}
-</div>
 
-<div>
-	<p><strong>Medicacion:</strong></p>
-	<p>{{ entity.medicacion }}</p>
-</div>
+<p><b>~Mediciones</b><p>
+    <table border="1" cellpadding="0" cellspacing="0" class="estetica">
+        <thead>
+		<tr style="background-color:#CCC;color:#000000;">
+			<th><strong>Peso </strong></th>			
+			<th><strong>Talla </strong></th>
+			<th><strong>PGC</strong></th>
+			<th><strong>PGV</strong></th>
+			<th><strong>P.M</strong></th>
+                        <th><strong>IMC</strong></th>
+			<th><strong>Cintura</strong></th>
+			<th><strong>ABS</strong></th>
+			<th><strong>Ombligo</strong></th>
+			<th><strong>ABI</strong></th>
+			<th><strong>Piernas</strong></th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+                    <td>{{ entity.peso }} <b>KG</b></td>
+                    <td>{{ entity.estatura }} <b>CM</b></td>
+			<td>{{ entity.pesogcorporal }}</td>
+			<td>{{ entity.porcentajegv }}</td>
+			<td>{{ entity.pm }}</td>
+			<td>{{ entity.imc }}</td>
+			<td>{{ entity.cintura }}</td>
+			<td>{{ entity.abs }}</td>
+                        <td>{{ entity.ombligo }}</td>
+                        <td>{{ entity.abi }}</td>
+                        <td>{{ entity.piernas }}</td>
+                   
+		</tr>
+	</tbody>
+    </table>        
+
+<p><b>~ Fitzpatrick:</b> {{ entity.fitzpatrick }}<br/>
+   <b>~ Info Fitzpatrick:</b> {{ entity.infoFitzpatrick }}<br/>
+   <b>~ Medicacion:</b> {{ entity.medicacion }}<br/>
+   <b>~ Dx_Cutaneo:</b> {{ entity.dxcut }}<br/></p>
+
+<p><table>{% include "HcBundle:includes:footer.html.twig" %}</table></p>	
 
 
 

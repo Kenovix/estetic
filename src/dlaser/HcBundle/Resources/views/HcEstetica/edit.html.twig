@@ -318,23 +318,7 @@
 				{{ form_widget(form.piernas) }}
 			</div>
 		</div>
-              </fieldset>        
-                	
-
-    	
-    	<a id="limpiar" class="button">
-	    	<span class="icon icon83"></span>
-	    	<span class="label">Limpiar</span>
-	    </a>
-	    
-	    <a id="view" class="button">
-	    	<span class="icon icon84"></span>
-	    	<span class="label">Ver</span>
-	    </a>
-	    	    
-	    <br />
-	    <br />
-    
+                    
 	    
     	{{ form_rest(form) }}
     	
@@ -345,7 +329,7 @@
 	<span class="label">Modificar</span>
 </button>    
     
-<a href="{{ path('HcEstetica_impresa', {'hcEstetica': entity.id}) }}" class="button left"><span class="label">Imprimir</span></a>
+<a href="{{ path('HcEstetica_impresa', {'hcEstetica': entity.id}) }}" class="button left" target="blank"><span class="label">Imprimir</span></a>
 <a href="{{ path('hc_edit', {'id': hc.factura.id}) }}" class="button left"><span class="label">Volver a la Historia clinica</span></a>
 
 {% endblock %}

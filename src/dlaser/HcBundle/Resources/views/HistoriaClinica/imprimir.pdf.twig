@@ -87,7 +87,7 @@
 		    		</tr>
 		    		{% endfor %}
 		    </tbody>
-		</table><br/>
+		</table>
                         <b>OTROS DIAGNOSTICOS:</b><br/>
                             ~ {{ entity.dxPresunto }}
                         </p>
@@ -143,10 +143,11 @@
 
 		        {% endfor %} 				
 		
-		{% endif %}</p>		
+		{% endif %}
+                          <b>PLAN DE MANEJO: </b>{{ entity.manejo }}</p>                
                        
 		
-                <p><b>PLAN DE MANEJO: </b>{{ entity.manejo }}</p>
+           
 		
 		<p><b>CONTROL: </b>{{ entity.control }}. <br/>
 		{% if entity.ctrlPrioritario  %}
@@ -208,7 +209,7 @@
                  <b>Registro:</b>{{ profesional.tp }}<br/>
                  <b>Factura:</b> {{factura.id}}
                </p>
-            <p><table>{% include "HcBundle:includes:footer.html.twig" %}</table></p>  
+           
 
 {% endif %}
 
@@ -238,7 +239,7 @@
 		<tr>
 			<td height="200">
 			    
-			    <h1 aling="center">Examenes Solicitados</h1>
+			    <h1 align="center">Examenes Solicitados</h1>
 			    
 			    <br />
 			    <p>
@@ -250,11 +251,8 @@
                             <span>{{ entity.notaExaSoli }}</span></p><br/>										
 			</td>
 		</tr>
-		{% if(i is odd) %}
-			{% include "HcBundle:includes:footer.html.twig" %}
-		{% endif %}
         </table></p>
-	
+	 <p><table>{% include "HcBundle:includes:footer.html.twig" %}</table></p>  
 {% endif %}
 
 
@@ -279,12 +277,10 @@
 		  	<td width="90" align="center"><b>{{ entity.fecha | date('d-m-y') }}</b></td>
 	 	</tr>
 	 </table>
-
+        <h1 align="center">Fomula Medica</h1>
 	<table>
 		<tr>
-			<td height="290">
-			    
-			  <h1 aling="center">Fomula Medica</h1>  
+			<td height="200">    
 			    <p><ul>
 			    	{% for permiso in  perHcMe%}            
 			        	<li>{{ permiso.principioActivo}} {{ permiso.presentacion}} {{ permiso.dosisDia }} </li>
@@ -293,6 +289,13 @@
 			</td>
 		</tr>
 	</table>
+        
+        <p align="left">
+		 <b>Medico: </b> {{ profesional.nombre }} {{ profesional.apellido }}<br/>
+                 <b>Especialidad:</b> {{ profesional.especialidad }}<br/>
+                 <b>Registro:</b>{{ profesional.tp }}<br/>
+                 <b>Factura:</b> {{factura.id}}
+        </p>
 	
 {% endif %}
 
@@ -315,30 +318,21 @@
 		  	<td width="90" align="center"><b>{{ entity.fecha | date('d-m-y') }}</b></td>
 		</tr>
 	</table>
-    
+    <h1 align="center">CONTROL</h1> 
     <table>
 		<tr>
-			<td height="280">
-			    
-			    <h1>CONTROL</h1>
-			    
-			    <br /><br /><br /><br />
-			    
-			    <span>
+			<td height="200">  
+			    <p><span>
 			    	{{ entity.control }}
 			    	{% if entity.ctrlPrioritario  %}
 						<b>Prioritario</b>
 					{% endif %}
-			    </span>
+                               </span></p>
 			
-				<br /><br />
-			
-				
+				<br />			
 			</td>
-		</tr>		
-		{% if(i is odd) %}
-			{% include "HcBundle:includes:footer.html.twig" %}
-		{% endif %}		
+		</tr>			
 	</table>
+    <p><table>{% include "HcBundle:includes:footer.html.twig" %}</table></p>
 {% endif %}
 {% endblock %}

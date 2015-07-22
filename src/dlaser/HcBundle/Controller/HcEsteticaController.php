@@ -57,7 +57,8 @@ class HcEsteticaController extends Controller{
 	{
 
         $HcEstetica = new HcEstetica();		
-		
+        $HcEstetica->setFecha(new \DateTime('now'));
+
         $request = $this->getRequest();
 		$form   = $this->createForm(new HcEsteticaType(), $HcEstetica);				
 		$form->bindRequest($request);
@@ -127,24 +128,24 @@ class HcEsteticaController extends Controller{
 			$breadcrumbs->addItem("Historia Clinica", $this->get("router")->generate("hc_edit",array('id'=>$hc->getFactura()->getId())));
 			$breadcrumbs->addItem("HCEstetica Modificar");
 			
-			$ruta = $this->container->getParameter('dlaser.directorio.imagenes');
-			$ruta .= 'grafico_'.$hc->getId().'.png';
+			//$ruta = $this->container->getParameter('dlaser.directorio.imagenes');
+			//$ruta .= 'grafico_'.$hc->getId().'.png';
 			
-			if( file_exists ($ruta)){								
-			}else{
-				$ruta = $this->container->getParameter('dlaser.imagen.grafico');
-				$ruta .= 'biotipo.jpg';
-			}
+			//if( file_exists ($ruta)){								
+			//}else{
+			//	$ruta = $this->container->getParameter('dlaser.imagen.grafico');
+			//	$ruta .= 'biotipo.jpg';
+			//}
 			$factura = $hc->getFactura();
 			
-			$grafico = 'data:image/png;base64,';			
-			$grafico .= base64_encode (file_get_contents($ruta));
+			//$grafico = 'data:image/png;base64,';			
+			//$grafico .= base64_encode (file_get_contents($ruta));
 
 			return $this->render('HcBundle:HcEstetica:edit.html.twig', array(
 					'entity' => $hcEstetica,
 					'hc' => $hc,
 					'factura' => $factura,
-					'grafico' => $grafico,
+					
 					'form'   => $editform->createView()
 			));			
 			
@@ -196,20 +197,20 @@ class HcEsteticaController extends Controller{
 				$breadcrumbs->addItem("Historia Estetica", $this->get("router")->generate("HcEstetica_new",array('hc'=>$hc->getId())));
 				$breadcrumbs->addItem("Modificar");
 				
-				$ruta = $this->container->getParameter('dlaser.directorio.imagenes');
-				$ruta .= 'grafico_'.$hc->getId().'.png';
-				if( file_exists ($ruta)){
-				}else{
-					$ruta = $this->container->getParameter('dlaser.imagen.grafico');
-					$ruta .= 'biotipo.jpg';
-				}					
-				$grafico = 'data:image/png;base64,';					
-				$grafico .= base64_encode (file_get_contents($ruta));
+				//$ruta = $this->container->getParameter('dlaser.directorio.imagenes');
+				//$ruta .= 'grafico_'.$hc->getId().'.png';
+				//if( file_exists ($ruta)){
+				//}else{
+				//	$ruta = $this->container->getParameter('dlaser.imagen.grafico');
+				//	$ruta .= 'biotipo.jpg';
+				//}					
+				//$grafico = 'data:image/png;base64,';					
+				//$grafico .= base64_encode (file_get_contents($ruta));
 				
 				return $this->render('HcBundle:HcEstetica:edit.html.twig', array(
 						'entity' => $HcEstetica,
 						'hc' => $hc,
-						'grafico' => $grafico,
+						//'grafico' => $grafico,
 						'form'   => $form->createView()
 				));
 			}
@@ -252,8 +253,9 @@ class HcEsteticaController extends Controller{
 			$html = $this->renderView('HcBundle:Impresos:hcEsteticaImpreso.pdf.twig', array(
 					'entity' => $hcEstetica,
 					'paciente' => $paciente,
-					'cliente' => $cliente,					
-					'hc' => $hc,					
+					'cliente' => $cliente,	
+                                        'sede'=>$sede,
+					'hc' => $hc					
 			));
 			
 			
