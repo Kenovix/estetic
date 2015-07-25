@@ -317,8 +317,14 @@
 				{{ form_errors(form.piernas) }}
 				{{ form_widget(form.piernas) }}
 			</div>
+                        
+                       <a id="ver-mediciones" title="Ver Mediciones">Ver mediciones</a>
 		</div>
-		
+		<div>
+    		{{ form_label(form.notas) }}
+			{{ form_errors(form.notas) }}
+			{{ form_widget(form.notas) }}
+		</div>
 		{{ form_rest(form) }}
 		
               </fieldset>        

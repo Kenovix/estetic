@@ -317,9 +317,15 @@
 				{{ form_errors(form.piernas) }}
 				{{ form_widget(form.piernas) }}
 			</div>
+                        <a id="ver-mediciones" title="Ver Mediciones">Ver mediciones</a> 
 		</div>
-                    
-	    
+    
+                   
+	    <div>
+    		{{ form_label(form.notas) }}
+			{{ form_errors(form.notas) }}
+			{{ form_widget(form.notas) }}
+		</div>
     	{{ form_rest(form) }}
     	
     </fieldset>
@@ -339,13 +345,26 @@
 <script src="{{ asset('bundles/dlaser/js/jquery-ui-1.8.23.custom.min.js') }}"></script>
 
 <script type="text/javascript">
-
+$(function() {
+        $( "#cuadro-mediciones" ).dialog({
+            autoOpen: false,
+            height: 230,
+	    width: 450,
+            show: "blind",
+            hide: "explode"
+        });
+ 
+        $( "#ver-mediciones" ).button().click(function() {
+            $( "#cuadro-mediciones" ).dialog( "open" );
+            return false;
+        });
+    });
 		 
-		 $(function() {
-		 	$( "#check_item" ).accordion({
-		 		collapsible: true
+$(function() {
+        $( "#check_item" ).accordion({
+            collapsible: true
 		 	});
-		 });
+            });
 		 
 </script>
 {% endblock %}

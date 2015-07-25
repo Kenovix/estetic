@@ -276,7 +276,14 @@ class HcEstetica implements \Serializable
      */
     private $piernas;
     
-
+    
+    /**
+     * @var string $notas
+     *
+     * @ORM\Column(name="notas", type="string", nullable=false)
+     */
+    private $notas;
+    
     /**
      * @var Hc
      *
@@ -987,7 +994,25 @@ class HcEstetica implements \Serializable
         return $this->piernas;
     }
     
-    
+    /**
+     * Set notas
+     *
+     * @param text $notas
+     */
+    public function setNotas($notas)
+    {
+        $this->notas = $notas;
+    }
+
+    /**
+     * Get notas
+     *
+     * @return text 
+     */
+    public function getNotas()
+    {
+        return $this->notas;
+    }
      /**
      * Set hc
      *
@@ -997,6 +1022,7 @@ class HcEstetica implements \Serializable
     {
         $this->hc = $hc;
     }
+    
 
     /**
      * Get hc

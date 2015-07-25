@@ -103,7 +103,7 @@ class HcEsteticaController extends Controller{
 		$em = $this->getDoctrine()->getEntityManager();
 		$hcEstetica = $em->getRepository('HcBundle:HcEstetica')->findOneBy(array('hc' => $hc));		
 		$hc = $em->getRepository('HcBundle:Hc')->find($hc);
-				
+		
 		if($hcEstetica)
 		{
 			$serialize = array(

@@ -76,8 +76,8 @@ class HcEsteticaType extends AbstractType
 		->add('parpado', 'choice', array(
 				'label' => 'Parpado:',
 				'choices' => array(
-						'ptosis' => 'PTosis', 'edematizados ' => 'Edematizados', 'ojeras' => 'Ojeras', 'bolsas_superiores' => 'Bolsas superiores', 
-						'xantelasma' => 'Xantelasma', 'bolsas_inferiores' => 'Bolsas inferiores', 'queratosis' => 'Queratosis'
+						'ptosis' => 'PTosis', 'edematizados ' => 'Edematizados', 'ojeras' => 'Ojeras', 'bolsas_superiores' => 'Bolsas superiores', 'xantelasma' => 'Xantelasma',
+						'bolsas_inferiores' => 'Bolsas inferiores', 'queratosis' => 'Queratosis'
 				),
 				'multiple'=>true,
 				'expanded' => true,				
@@ -156,7 +156,7 @@ class HcEsteticaType extends AbstractType
                 ->add('ombligo', 'integer', array('label' => 'Ombligo'))
                 ->add('abi', 'integer', array('label' => 'ABI'))  
                 ->add('piernas', 'integer', array('label' => 'Piernas'))
-                        
+                ->add('notas', 	'textarea', array('label' => 'Notas:'))        
                         
 		
 		;		

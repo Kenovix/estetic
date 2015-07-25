@@ -51,6 +51,28 @@ class HcRepository extends EntityRepository{
 		$dql->setParameter('id', $pacienteId);		
 		return $dql->getResult();
 	}
+        
+        public function findMediciones($pacienteId){
+		
+		$em = $this->getEntityManager();		
+		$dql = $em->createQuery("SELECT
+									he
+								FROM
+									HcBundle:HcEstetica he
+                                                                JOIN
+                                                                        he.hc h
+								JOIN
+									h.factura f
+								JOIN
+									f.paciente p
+								WHERE
+									p.id = :id
+								ORDER BY
+									he.fecha DESC");
+		
+		$dql->setParameter('id', $pacienteId);		
+		return $dql->getResult();
+	}
 	
 	public function findListHc($idP,$tipoid){
 		
