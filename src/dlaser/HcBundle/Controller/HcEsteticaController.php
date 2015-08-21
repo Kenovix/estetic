@@ -243,7 +243,6 @@ class HcEsteticaController extends Controller{
 		
 			$hcEstetica->unserialize($serialize);
 			
-			
 
 			$cliente = $hc->getFactura()->getCliente();
 			$sede = $hc->getFactura()->getSede();

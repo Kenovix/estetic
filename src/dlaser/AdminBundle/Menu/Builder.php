@@ -56,8 +56,8 @@ class Builder extends ContainerAware
 				$menu['Historia Clínica']->addChild('Examen', array('uri' => '#'));
 					$menu['Historia Clínica']['Examen']->addChild('Listado', array('route' => 'examen_list'));
 					$menu['Historia Clínica']['Examen']->addChild('Nuevo', array('route' => 'examen_new'));
-				$menu['Historia Clínica']->addChild('CTC', array('uri' => '#'));
-					$menu['Historia Clínica']['CTC']->addChild('Consultar', array('route' => 'ctc_search'));
+				/*$menu['Historia Clínica']->addChild('CTC', array('uri' => '#'));
+					$menu['Historia Clínica']['CTC']->addChild('Consultar', array('route' => 'ctc_search'));*/
 		
 		}elseif($securityContext->isGranted('ROLE_MEDICO')){
 			
@@ -75,8 +75,8 @@ class Builder extends ContainerAware
 				$menu['Historia Clínica']->addChild('Examen', array('uri' => '#'));
 					$menu['Historia Clínica']['Examen']->addChild('Listado', array('route' => 'examen_list'));
 					$menu['Historia Clínica']['Examen']->addChild('Nuevo', array('route' => 'examen_new'));
-				$menu['Historia Clínica']->addChild('CTC', array('uri' => '#'));
-				$menu['Historia Clínica']['CTC']->addChild('Consultar', array('route' => 'ctc_search'));
+				/*$menu['Historia Clínica']->addChild('CTC', array('uri' => '#'));
+				$menu['Historia Clínica']['CTC']->addChild('Consultar', array('route' => 'ctc_search'));*/
 		}else{
 			
 			$menu->addChild('Agendamiento', array('uri' => '#'));
@@ -87,12 +87,18 @@ class Builder extends ContainerAware
 					$menu['Agendamiento']['Citas']->addChild('Nueva', array('route' => 'cupo_new'));
 					$menu['Agendamiento']['Citas']->addChild('Consultar', array('route' => 'cupo_search'));
 					$menu['Agendamiento']['Citas']->addChild('Facturar', array('route' => 'factura_search'));
-				
-			$menu->addChild('Facturación', array('uri' => '#'));
+			
+                   
+				$menu['Agendamiento']->addChild('Agenda', array('uri' => '#'));
+					$menu['Agendamiento']['Agenda']->addChild('Listado', array('route' => 'agenda_list'));
+					$menu['Agendamiento']['Agenda']->addChild('Nueva', array('route' => 'agenda_new'));
+					//$menu['Agendamiento']['Agenda']->addChild('Agenda Medica', array('route' => 'agenda_medica_list'));
+                                        
+			/**$menu->addChild('Facturación', array('uri' => '#'));
 				$menu['Facturación']->addChild('Cierre de caja', array('route' => 'factura_arqueo'));
 				$menu['Facturación']->addChild('Admisión', array('uri' => '#'));
 					$menu['Facturación']['Admisión']->addChild('Consultar', array('route' => 'factura_admision_search'));
-				$menu['Facturación']->addChild('Cliente', array('route' => 'factura_cliente_list'));
+				$menu['Facturación']->addChild('Cliente', array('route' => 'factura_cliente_list'));*/
 		}
 		
 		$actualUser = $securityContext->getToken()->getUser();

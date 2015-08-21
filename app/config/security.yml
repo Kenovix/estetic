@@ -38,7 +38,7 @@ security:
         - { path: ^/agenda/aux/list, roles: ROLE_AUX }
         - { path: ^/agenda/aux/buscar$, roles: ROLE_AUX }
         - { path: ^/agenda/buscar$, roles: ROLE_AUX }
-        - { path: ^/agenda/.*, roles: ROLE_ADMIN }
+        - { path: ^/agenda/.*, roles: [ROLE_ADMIN,ROLE_AUX] }
         
         - { path: ^/informe/.*, roles: ROLE_AUX }
         

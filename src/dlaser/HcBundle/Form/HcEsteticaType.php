@@ -22,15 +22,15 @@ class HcEsteticaType extends AbstractType
 		->add('piel_tacto', 'choice', array(
 				'label' => 'Piel Tacto:',
 				'choices' => array(''=>'--Seleccione--','LF' => 'Lisa y Fina', 'GR' => 'Gruesa y Rugosa')))
-		->add('dentadura', 'choice', array(
+		/*->add('dentadura', 'choice', array(
 				'label' => 'Dentadura:',
-				'choices' => array(''=>'--Seleccione--','B' => 'Buena', 'R' => 'Regular', 'M' => 'Mala', 'P' => 'Protesis')))
+				'choices' => array(''=>'--Seleccione--','B' => 'Buena', 'R' => 'Regular', 'M' => 'Mala', 'P' => 'Protesis')))*/
 		
 		->add('nutricion', 'choice', array(
 				'choices' => array(''=>'--Seleccione--','N'=>'Normal','OB' => 'Obesidad', 'KG ' => 'KGS de exceso', 'DE' => 'Desnutricion'),
 				'label' => 'Nutrición:'))
 		
-		->add('kgs', 'integer', array('label' => 'K.G.S'))
+		//->add('kgs', 'integer', array('label' => 'K.G.S'))
 				
 		->add('op', 'choice', array(
 				'label' => 'Orificios pilocebaceos:',

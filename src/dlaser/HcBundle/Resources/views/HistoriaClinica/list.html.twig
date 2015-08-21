@@ -73,7 +73,7 @@
                 <td><strong>{{ entity.peso }}</strong></td>
                 <td>{{ entity.estatura }}</td>                
                 {% if entity.hcEstetica %}                	
-                	<td><a href="{{ path('HcEstetica_edit', { 'hc': entity.id }) }}" class="button left"><span class="label">Ver Hc-Estetica.</span></a></td>
+                	<td><a href="{{ path('HcEstetica_impresa', {'hcEstetica': entity.id}) }}" class="button left" target="blank"><span class="label" >Ver Hc-Estetica.</span></a></td>
                 {% else %}
                 	<td><a href="{{ path('HcEstetica_new', { 'hc': entity.id }) }}" class="button left"><span class="label">Nueva Hc-Estetica.</span></a></td>
                 {% endif %}

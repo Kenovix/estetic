@@ -117,7 +117,6 @@ class Paciente
      * @var string $direccion
      *
      * @ORM\Column(name="direccion", type="string", length=60, nullable=true)
-     * @Assert\NotBlank(message="El valor ingresado no puede estar vacio.")
      * @Assert\MaxLength(limit=60, message="El valor ingresado debe tener m��ximo {{ limit }} caracteres.")
      */
     private $direccion;
@@ -143,16 +142,18 @@ class Paciente
     /**
      * @var string $movil
      * 
-     * @ORM\Column(name="movil", type="string", length=10, nullable=true)
+     * @ORM\Column(name="movil", type="string", length=10, nullable=false)
+     * @Assert\NotBlank(message="El valor ingresado no puede estar vacio.")
      * @Assert\Min(limit = "3000000000", message = "El valor ingresado no puede ser menor de {{ limit }}", invalidMessage = "El valor ingresado debe ser un n��mero v��lido")
-	 * @Assert\Max(limit = "9999999999", message = "El valor ingresado no puede ser mayor de {{ limit }}", invalidMessage = "El valor ingresado debe ser un n��mero v��lido")
+     * @Assert\Max(limit = "9999999999", message = "El valor ingresado no puede ser mayor de {{ limit }}", invalidMessage = "El valor ingresado debe ser un n��mero v��lido")
      */
     private $movil;
 
     /**
      * @var string $email
      * 
-     * @ORM\Column(name="email", type="string", length=200, nullable=true)
+     * @ORM\Column(name="email", type="string", length=200, nullable=false)
+     * @Assert\NotBlank(message="El valor ingresado no puede estar vacio.")
      * @Assert\Email(message = "El email '{{ value }}' no es valido.", checkMX = true)
      */
     private $email;

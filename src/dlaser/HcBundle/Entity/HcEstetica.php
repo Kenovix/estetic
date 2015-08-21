@@ -94,13 +94,6 @@ class HcEstetica implements \Serializable
      */
     private $arrugas;
 
-    /**
-     * @var string $dentadura
-     *
-     * @ORM\Column(name="dentadura", type="string", length=2)
-     * @Assert\Choice(choices = {"B", "R", "M", "P"}, message = "Selecciona una opción valida.")
-     */
-    private $dentadura;
 
     /**
      * @var string $flacidez
@@ -123,15 +116,6 @@ class HcEstetica implements \Serializable
      * @Assert\Choice(choices = {"N", "OB", "KG", "DE"}, message = "Selecciona una opción valida.")
      */
     private $nutricion;
-
-    /**
-     * @var integer $kgs
-     *
-     * @ORM\Column(name="kgs", type="integer")
-     * @Assert\Min(limit = "0", message = "El valor ingresado no puede ser menor de {{ limit }}", invalidMessage = "El valor ingresado debe ser un número válido")
-     * @Assert\Max(limit = "150", message = "El valor ingresado no puede ser mayor de {{ limit }}", invalidMessage = "El valor ingresado debe ser un número válido")
-     */
-    private $kgs;
 
     /**
      * @var text $medicacion
