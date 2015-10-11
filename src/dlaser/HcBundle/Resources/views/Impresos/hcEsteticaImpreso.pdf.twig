@@ -333,7 +333,10 @@
 			<td>{{ entity.pesogcorporal }}</td>
 			<td>{{ entity.porcentajegv }}</td>
 			<td>{{ entity.pm }}</td>
-			<td>{{ entity.imc }}</td>
+			<td>
+			{% if(entity.peso and entity.estatura) %}
+				{{ (entity.peso/((entity.estatura/100)*(entity.estatura/100)))|number_format(2) }} &nbsp;&nbsp;
+			{% endif %}</td>
 			<td>{{ entity.cintura }}</td>
 			<td>{{ entity.abs }}</td>
                         <td>{{ entity.ombligo }}</td>

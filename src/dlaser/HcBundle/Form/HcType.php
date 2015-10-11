@@ -14,8 +14,9 @@ class HcType extends AbstractType
 		->add('diastole',			'integer', array('required' => false, 'label' => 'Dias.'))
 		->add('f_c',	 			'integer',	array('required' => false, 'label'=> 'F/C'))
 		->add('f_r',	 			'integer',	array('required' => false, 'label'=> 'F/R'))
-		->add('peso',	 			'integer',	array( 'label'=> 'Peso'))
+		->add('peso',	 			'text',	array( 'label'=> 'Peso'))
 		->add('estatura',			'integer',	array( 'label'=> 'Talla'))
+                ->add('imc',                           'integer',	array( 'label'=> 'IMC'))        
 				
 		->add('motivo',		    	'textarea',array('label' => 'Motivo consulta:', 'attr' => array('placeholder' => 'Ingrese el motivo de la consulta')))
 		->add('enfermedad',		    'textarea',array('label' => 'Enfermedad actual:', 'attr' => array('placeholder' => 'Ingrese la enfermedad actual del paciente')))

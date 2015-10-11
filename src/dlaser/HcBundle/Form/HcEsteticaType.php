@@ -145,7 +145,7 @@ class HcEsteticaType extends AbstractType
 				'data' => '1',
 		))
 		->add('infoFitzpatrick', 	'textarea', array('required' => false, 'label' => 'Nota:'))
-                ->add('peso', 'integer', array('label' => 'Peso'))        
+                ->add('peso', 'text', array('label' => 'Peso'))        
                 ->add('estatura', 'integer', array('label' => 'Talla'))
                 ->add('pesogcorporal', 'integer', array('label' => 'PGC'))        
                 ->add('porcentajegv', 'integer', array('label' => 'PGV'))        

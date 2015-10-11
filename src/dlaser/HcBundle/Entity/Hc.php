@@ -63,9 +63,9 @@ class Hc
     private $fR;
 
     /**
-     * @var integer $peso
+     * @var decimal $peso
      *
-     * @ORM\Column(name="peso", type="integer", nullable=true)
+     * @ORM\Column(name="peso", type="decimal",scale=2, nullable=true)
      */
     private $peso;
 
@@ -75,6 +75,13 @@ class Hc
      * @ORM\Column(name="estatura", type="integer", nullable=true)
      */
     private $estatura;
+    
+     /**
+     * @var integer $imc
+     *
+     * @ORM\Column(name="imc", type="integer", nullable=true)
+     */
+    private $imc;
 
     /**
      * @var text $motivo
@@ -372,6 +379,26 @@ class Hc
     public function getEstatura()
     {
         return $this->estatura;
+    }
+    
+    /**
+     * Set imc
+     *
+     * @param text $imc
+     */
+    public function setImc($imc)
+    {
+        $this->imc = $imc;
+    }
+
+    /**
+     * Get imc
+     *
+     * @return text 
+     */
+    public function getImc()
+    {
+        return $this->imc;
     }
 
     /**

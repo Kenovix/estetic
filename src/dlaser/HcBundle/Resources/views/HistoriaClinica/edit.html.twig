@@ -100,11 +100,12 @@
 			{{ form_label(edit_form.estatura) }}
 			{{ form_errors(edit_form.estatura) }}
 			{{ form_widget(edit_form.estatura) }}
+                        
+                        {{ form_label(edit_form.imc) }}
+			{{ form_errors(edit_form.imc) }}
+			{{ form_widget(edit_form.imc) }}
 			
-			{% if entity.peso and entity.estatura %}			
-				<label for="newHC_imc">IMC</label>
-				<input type="integer" id="newHC_imc" name="newHC_imc" value=""/>
-			{% endif %}
+			
 			
 			<a id="ver-signos" title="Ver cronologíco de signos">Ver signos</a>
 			
@@ -121,7 +122,9 @@
 		                <th>F/C</th>
 		                <th>F/R</th>
 		                <th>Peso</th>
-		                <th>Estatura</th>                                               
+		                <th>Estatura</th>  
+                                <th>IMC</th>  
+
 		            </tr>
 		        </thead>
 		        <tbody>
@@ -133,6 +136,7 @@
 		                <td>{{ entity.fR }}</td>
 		                <td>{{ entity.peso }}</td>
 		                <td>{{ entity.estatura }}</td>
+                                <td>{{ entity.imc }}</td>
 		            </tr>
 		        {% endfor %}        
 		        </tbody>

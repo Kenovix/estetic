@@ -182,9 +182,9 @@ class HcEstetica implements \Serializable
     private $infoFitzpatrick;
     
      /**
-     * @var integer $peso
+     * @var decimal $peso
      *
-     * @ORM\Column(name="peso", type="integer", nullable=true)
+     * @ORM\Column(name="peso", type="decimal",scale=2, nullable=true)
      */
     private $peso;
 
